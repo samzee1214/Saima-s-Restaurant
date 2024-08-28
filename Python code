@@ -1,0 +1,67 @@
+def display_menu():
+    # Menu items with prices in rupees
+    menu = {
+        "starters": {
+            "Spring Rolls": 150,
+            "Garlic Bread": 100,
+            "Paneer Chilli": 120,
+            "Gravy Manchurian": 180
+        },
+        "main_course": {
+            "Margherita Pizza": 350,
+            "Triple Schezwan Rice": 400,
+            "Butter Naan with Kadhai Paneer": 500,
+            "Dal Tadka with Jeera Rice": 300
+        },
+        "desserts": {
+            "Kit Kat Waffle": 200,
+            "Ice Cream Sundae": 150,
+            "Pancakes": 100,
+            "Cheesecake": 250
+        }
+    }
+
+    print("Welcome to Shweta's restaurant! Here is our menu:\n")
+
+    # Display starters
+    print("Starters:")
+    for starter, price in menu["starters"].items():
+        print(f"- {starter}: ₹{price:.2f}")
+
+    # Display main courses
+    print("\nMain Course:")
+    for main, price in menu["main_course"].items():
+        print(f"- {main}: ₹{price:.2f}")
+
+    # Display desserts
+    print("\nDesserts:")
+    for dessert, price in menu["desserts"].items():
+        print(f"- {dessert}: ₹{price:.2f}")
+
+    return menu
+
+def calculate_bill(menu):
+    total_bill = 0
+    choices = {
+        "starters": ["Spring Rolls"],
+        "main_course": ["Margherita Pizza"],
+        "desserts": ["Cheesecake"]
+    }
+
+    for category in menu:
+        print(f"\nChoose from {category.capitalize()}:")
+        for choice in choices[category]:
+            if choice in menu[category]:
+                total_bill += menu[category][choice]
+                print(f"Added {choice} - ₹{menu[category][choice]:.2f} to your bill.")
+
+    return total_bill
+
+def main():
+    menu = display_menu()
+    total_bill = calculate_bill(menu)
+    print(f"\nYour total bill is: ₹{total_bill:.2f}")
+    print("Thank you for dining with us!")
+
+if _name_ == "_main_":
+    main()
