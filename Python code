@@ -21,7 +21,7 @@ def display_menu():
         }
     }
 
-    print("Welcome to Shweta's restaurant! Here is our menu:\n")
+    print("Welcome to Saima's restaurant! Here is our menu:\n")
 
     # Display starters
     print("Starters:")
